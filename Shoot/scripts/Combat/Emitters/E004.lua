@@ -1,0 +1,10 @@
+local mt = Emitters['圆形弹幕-交叉']
+mt.BulletArt = "Abilities\\Weapons\\catapult\\catapultMissile.mdl"
+mt.EmitTimes = 100
+mt.InitialVeloc = 10
+mt.EmitInterval = 0.2
+mt.Delay = 0.3
+mt.Cooldown = 1
+mt.EmitterRotSpd = 120
+mt.EmitNumPerShot = 6
+mt.DistributionAngle = 60

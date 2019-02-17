@@ -1,0 +1,11 @@
+local mt = Emitters['仙女散花']
+mt.BulletArt = "Abilities\\Weapons\\WingedSerpentMissile\\WingedSerpentMissile.mdl"
+mt.EmitTimes = 50
+mt.InitialVeloc = 10
+mt.Acc = -15
+mt.AccDuration = 2
+mt.EmitInterval = 0.05
+mt.Cooldown = 2
+mt.EmitterRotSpd = 360
+mt.EmitNumPerShot = 3
+mt.DistributionAngle = 120

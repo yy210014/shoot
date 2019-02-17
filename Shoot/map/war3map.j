@@ -1,12 +1,4 @@
 globals
-//globals from BzAPI:
-constant boolean LIBRARY_BzAPI=true
-trigger array BzAPI___DamageEventQueue
-integer BzAPI___DamageEventNumber= 0
-//endglobals from BzAPI
-    // User-defined
-unit array udg_YX_unit
-timer array udg_JHTimet
     // Generated
 rect gg_rct_rect_1_00= null
 rect gg_rct_rect_1_01= null
@@ -40,284 +32,21 @@ rect gg_rct_rect_1_70= null
 rect gg_rct_rect_1_71= null
 rect gg_rct_rect_1_72= null
 rect gg_rct_rect_1_73= null
-trigger gg_trg______________u= null
-trigger gg_trg____________________001_______u= null
-trigger gg_trg____________________001________2= null
-trigger gg_trg____________________001________3= null
-trigger gg_trg____________________001________4A= null
+trigger gg_trg_initial= null
 
 
 //JASSHelper struct globals:
 
 endglobals
-    native DzGetMouseTerrainX takes nothing returns real
-    native DzGetMouseTerrainY takes nothing returns real
-    native DzGetMouseTerrainZ takes nothing returns real
-    native DzIsMouseOverUI takes nothing returns boolean
-    native DzGetMouseX takes nothing returns integer
-    native DzGetMouseY takes nothing returns integer
-    native DzGetMouseXRelative takes nothing returns integer
-    native DzGetMouseYRelative takes nothing returns integer
-    native DzSetMousePos takes integer x, integer y returns nothing
-    native DzTriggerRegisterMouseEvent takes trigger trig, integer btn, integer status, boolean sync, string func returns nothing
-    native DzTriggerRegisterMouseEventByCode takes trigger trig, integer btn, integer status, boolean sync, code funcHandle returns nothing
-    native DzTriggerRegisterKeyEvent takes trigger trig, integer key, integer status, boolean sync, string func returns nothing
-    native DzTriggerRegisterKeyEventByCode takes trigger trig, integer key, integer status, boolean sync, code funcHandle returns nothing
-    native DzTriggerRegisterMouseWheelEvent takes trigger trig, boolean sync, string func returns nothing
-    native DzTriggerRegisterMouseWheelEventByCode takes trigger trig, boolean sync, code funcHandle returns nothing
-    native DzTriggerRegisterMouseMoveEvent takes trigger trig, boolean sync, string func returns nothing
-    native DzTriggerRegisterMouseMoveEventByCode takes trigger trig, boolean sync, code funcHandle returns nothing
-    native DzGetTriggerKey takes nothing returns integer
-    native DzGetWheelDelta takes nothing returns integer
-    native DzIsKeyDown takes integer iKey returns boolean
-    native DzGetTriggerKeyPlayer takes nothing returns player
-    native DzGetWindowWidth takes nothing returns integer
-    native DzGetWindowHeight takes nothing returns integer
-    native DzGetWindowX takes nothing returns integer
-    native DzGetWindowY takes nothing returns integer
-    native DzTriggerRegisterWindowResizeEvent takes trigger trig, boolean sync, string func returns nothing
-    native DzTriggerRegisterWindowResizeEventByCode takes trigger trig, boolean sync, code funcHandle returns nothing
-    native DzIsWindowActive takes nothing returns boolean
-    native DzDestructablePosition takes destructable d, real x, real y returns nothing
-    native DzSetUnitPosition takes unit whichUnit, real x, real y returns nothing
-    native DzExecuteFunc takes string funcName returns nothing
-    native DzGetUnitUnderMouse takes nothing returns unit
-    native DzSetUnitTexture takes unit whichUnit, string path, integer texId returns nothing
-    native DzSetMemory takes integer address, real value returns nothing
-    native DzSetUnitID takes unit whichUnit, integer id returns nothing
-    native DzSetUnitModel takes unit whichUnit, string path returns nothing
-    native DzSetWar3MapMap takes string map returns nothing
-    native DzTriggerRegisterSyncData takes trigger trig, string prefix, boolean server returns nothing
-    native DzSyncData takes string prefix, string data returns nothing
-    native DzGetTriggerSyncData takes nothing returns string
-    native DzGetTriggerSyncPlayer takes nothing returns player
-    native DzFrameHideInterface takes nothing returns nothing
-    native DzFrameEditBlackBorders takes real upperHeight, real bottomHeight returns nothing
-    native DzFrameGetPortrait takes nothing returns integer
-    native DzFrameGetMinimap takes nothing returns integer
-    native DzFrameGetCommandBarButton takes integer row, integer column returns integer
-    native DzFrameGetHeroBarButton takes integer buttonId returns integer
-    native DzFrameGetHeroHPBar takes integer buttonId returns integer
-    native DzFrameGetHeroManaBar takes integer buttonId returns integer
-    native DzFrameGetItemBarButton takes integer buttonId returns integer
-    native DzFrameGetMinimapButton takes integer buttonId returns integer
-    native DzFrameGetUpperButtonBarButton takes integer buttonId returns integer
-    native DzFrameGetTooltip takes nothing returns integer
-    native DzFrameGetChatMessage takes nothing returns integer
-    native DzFrameGetUnitMessage takes nothing returns integer
-    native DzFrameGetTopMessage takes nothing returns integer
-    native DzGetColor takes integer r, integer g, integer b, integer a returns integer
-    native DzFrameSetUpdateCallback takes string func returns nothing
-    native DzFrameSetUpdateCallbackByCode takes code funcHandle returns nothing
-    native DzFrameShow takes integer frame, boolean enable returns nothing
-    native DzCreateFrame takes string frame, integer parent, integer id returns integer
-    native DzCreateSimpleFrame takes string frame, integer parent, integer id returns integer
-    native DzDestroyFrame takes integer frame returns nothing
-    native DzLoadToc takes string fileName returns nothing
-    native DzFrameSetPoint takes integer frame, integer point, integer relativeFrame, integer relativePoint, real x, real y returns nothing
-    native DzFrameSetAbsolutePoint takes integer frame, integer point, real x, real y returns nothing
-    native DzFrameClearAllPoints takes integer frame returns nothing
-    native DzFrameSetEnable takes integer name, boolean enable returns nothing
-    native DzFrameSetScript takes integer frame, integer eventId, string func, boolean sync returns nothing
-    native DzFrameSetScriptByCode takes integer frame, integer eventId, code funcHandle, boolean sync returns nothing
-    native DzGetTriggerUIEventPlayer takes nothing returns player
-    native DzGetTriggerUIEventFrame takes nothing returns integer
-    native DzFrameFindByName takes string name, integer id returns integer
-    native DzSimpleFrameFindByName takes string name, integer id returns integer
-    native DzSimpleFontStringFindByName takes string name, integer id returns integer
-    native DzSimpleTextureFindByName takes string name, integer id returns integer
-    native DzGetGameUI takes nothing returns integer
-    native DzClickFrame takes integer frame returns nothing
-    native DzSetCustomFovFix takes real value returns nothing
-    native DzEnableWideScreen takes boolean enable returns nothing
-    native DzFrameSetText takes integer frame, string text returns nothing
-    native DzFrameGetText takes integer frame returns string
-    native DzFrameSetTextSizeLimit takes integer frame, integer size returns nothing
-    native DzFrameGetTextSizeLimit takes integer frame returns integer
-    native DzFrameSetTextColor takes integer frame, integer color returns nothing
-    native DzGetMouseFocus takes nothing returns integer
-    native DzFrameSetAllPoints takes integer frame, integer relativeFrame returns boolean
-    native DzFrameSetFocus takes integer frame, boolean enable returns boolean
-    native DzFrameSetModel takes integer frame, string modelFile, integer modelType, integer flag returns nothing
-    native DzFrameGetEnable takes integer frame returns boolean
-    native DzFrameSetAlpha takes integer frame, integer alpha returns nothing
-    native DzFrameGetAlpha takes integer frame returns integer
-    native DzFrameSetAnimate takes integer frame, integer animId, boolean autocast returns nothing
-    native DzFrameSetAnimateOffset takes integer frame, real offset returns nothing
-    native DzFrameSetTexture takes integer frame, string texture, integer flag returns nothing
-    native DzFrameSetScale takes integer frame, real scale returns nothing
-    native DzFrameSetTooltip takes integer frame, integer tooltip returns nothing
-    native DzFrameCageMouse takes integer frame, boolean enable returns nothing
-    native DzFrameGetValue takes integer frame returns real
-    native DzFrameSetMinMaxValue takes integer frame, real minValue, real maxValue returns nothing
-    native DzFrameSetStepValue takes integer frame, real step returns nothing
-    native DzFrameSetValue takes integer frame, real value returns nothing
-    native DzFrameSetSize takes integer frame, real w, real h returns nothing
-    native DzCreateFrameByTagName takes string frameType, string name, integer parent, string template, integer id returns integer
-    native DzFrameSetVertexColor takes integer frame, integer color returns nothing
 
 
-//library BzAPI:
-    //hardware
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //plus
-
-
-
-
-
-
-
-
-
-    //sync
-
-
-
-
-    //gui
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    function DzTriggerRegisterMouseEventTrg takes trigger trg,integer status,integer btn returns nothing
-        if trg == null then
-            return
-        endif
-        call DzTriggerRegisterMouseEvent(trg, btn, status, true, null)
-    endfunction
-    function DzTriggerRegisterKeyEventTrg takes trigger trg,integer status,integer btn returns nothing
-        if trg == null then
-            return
-        endif
-        call DzTriggerRegisterKeyEvent(trg, btn, status, true, null)
-    endfunction
-    function DzTriggerRegisterMouseMoveEventTrg takes trigger trg returns nothing
-        if trg == null then
-            return
-        endif
-        call DzTriggerRegisterMouseMoveEvent(trg, true, null)
-    endfunction
-    function DzTriggerRegisterMouseWheelEventTrg takes trigger trg returns nothing
-        if trg == null then
-            return
-        endif
-        call DzTriggerRegisterMouseWheelEvent(trg, true, null)
-    endfunction
-    function DzTriggerRegisterWindowResizeEventTrg takes trigger trg returns nothing
-        if trg == null then
-            return
-        endif
-        call DzTriggerRegisterWindowResizeEvent(trg, true, null)
-    endfunction
-    function DzF2I takes integer i returns integer
-        return i
-    endfunction
-    function DzI2F takes integer i returns integer
-        return i
-    endfunction
-    function DzK2I takes integer i returns integer
-        return i
-    endfunction
-    function DzI2K takes integer i returns integer
-        return i
-    endfunction
-
-//library BzAPI ends
 //===========================================================================
 // 
 // 高清纹理地图模板
 // 
 //   Warcraft III map script
 //   Generated by the Warcraft III World Editor
-//   Date: Wed Feb 13 02:06:41 2019
+//   Date: Mon Feb 18 06:51:45 2019
 //   Map Author: 未知
 // 
 //===========================================================================
@@ -327,13 +56,6 @@ endglobals
 //*
 //***************************************************************************
 function InitGlobals takes nothing returns nothing
-    local integer i= 0
-    set i=0
-    loop
-        exitwhen ( i > 4 )
-        set udg_JHTimet[i]=CreateTimer()
-        set i=i + 1
-    endloop
 endfunction
 //***************************************************************************
 //*
@@ -421,86 +143,23 @@ endfunction
 //*
 //***************************************************************************
 //===========================================================================
-// Trigger: 简介 复制
+// Trigger: initial
 //===========================================================================
-function Trig______________uActions takes nothing returns nothing
-    call FogEnableOff()
-    call FogMaskEnableOff()
+function Trig_initialActions takes nothing returns nothing
     call Cheat("exec-lua:scripts.main")
 endfunction
 //===========================================================================
-function InitTrig______________u takes nothing returns nothing
-    set gg_trg______________u=CreateTrigger()
-    call TriggerAddAction(gg_trg______________u, function Trig______________uActions)
-endfunction
-//===========================================================================
-// Trigger: 未命名触发器 001 复制
-//
-// Abilities\Weapons\ZigguratFrostMissile\ZigguratFrostMissile.mdl 280
-//===========================================================================
-function Trig____________________001_______uActions takes nothing returns nothing
-    call StartTimerBJ(udg_JHTimet[0], false, 0.00)
-endfunction
-//===========================================================================
-function InitTrig____________________001_______u takes nothing returns nothing
-    set gg_trg____________________001_______u=CreateTrigger()
-    call DzTriggerRegisterKeyEventTrg(gg_trg____________________001_______u , 1 , ((37))) // INLINED!!
-    call TriggerAddAction(gg_trg____________________001_______u, function Trig____________________001_______uActions)
-endfunction
-//===========================================================================
-// Trigger: 未命名触发器 001 复制 2
-//
-// Abilities\Weapons\ZigguratFrostMissile\ZigguratFrostMissile.mdl 280
-//===========================================================================
-function Trig____________________001________2Actions takes nothing returns nothing
-    call StartTimerBJ(udg_JHTimet[1], false, 0.00)
-endfunction
-//===========================================================================
-function InitTrig____________________001________2 takes nothing returns nothing
-    set gg_trg____________________001________2=CreateTrigger()
-    call DzTriggerRegisterKeyEventTrg(gg_trg____________________001________2 , 1 , ((38))) // INLINED!!
-    call TriggerAddAction(gg_trg____________________001________2, function Trig____________________001________2Actions)
-endfunction
-//===========================================================================
-// Trigger: 未命名触发器 001 复制 3
-//
-// Abilities\Weapons\ZigguratFrostMissile\ZigguratFrostMissile.mdl 280
-//===========================================================================
-function Trig____________________001________3Actions takes nothing returns nothing
-    call StartTimerBJ(udg_JHTimet[2], false, 0.00)
-endfunction
-//===========================================================================
-function InitTrig____________________001________3 takes nothing returns nothing
-    set gg_trg____________________001________3=CreateTrigger()
-    call DzTriggerRegisterKeyEventTrg(gg_trg____________________001________3 , 1 , ((39))) // INLINED!!
-    call TriggerAddAction(gg_trg____________________001________3, function Trig____________________001________3Actions)
-endfunction
-//===========================================================================
-// Trigger: 未命名触发器 001 复制 4A
-//
-// Abilities\Weapons\ZigguratFrostMissile\ZigguratFrostMissile.mdl 280
-// 142A9B3C - mov [ebx+0000142A],ds
-//===========================================================================
-function Trig____________________001________4AActions takes nothing returns nothing
-    call StartTimerBJ(udg_JHTimet[3], false, 0.00)
-endfunction
-//===========================================================================
-function InitTrig____________________001________4A takes nothing returns nothing
-    set gg_trg____________________001________4A=CreateTrigger()
-    call DzTriggerRegisterKeyEventTrg(gg_trg____________________001________4A , 1 , ((40))) // INLINED!!
-    call TriggerAddAction(gg_trg____________________001________4A, function Trig____________________001________4AActions)
+function InitTrig_initial takes nothing returns nothing
+    set gg_trg_initial=CreateTrigger()
+    call TriggerAddAction(gg_trg_initial, function Trig_initialActions)
 endfunction
 //===========================================================================
 function InitCustomTriggers takes nothing returns nothing
-    call InitTrig______________u()
-    call InitTrig____________________001_______u()
-    call InitTrig____________________001________2()
-    call InitTrig____________________001________3()
-    call InitTrig____________________001________4A()
+    call InitTrig_initial()
 endfunction
 //===========================================================================
 function RunInitializationTriggers takes nothing returns nothing
-    call ConditionalTriggerExecute(gg_trg______________u)
+    call ConditionalTriggerExecute(gg_trg_initial)
 endfunction
 //***************************************************************************
 //*
@@ -729,8 +388,8 @@ function main takes nothing returns nothing
 
 
     call InitGlobals()
-    call InitCustomTriggers()
-    call ConditionalTriggerExecute(gg_trg______________u) // INLINED!!
+    call InitTrig_initial() // INLINED!!
+    call ConditionalTriggerExecute(gg_trg_initial) // INLINED!!
 endfunction
 //***************************************************************************
 //*

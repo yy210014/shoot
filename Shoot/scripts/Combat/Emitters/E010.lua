@@ -1,0 +1,10 @@
+local mt = Emitters['炮弹']
+mt.BulletArt = "Abilities\\Weapons\\Mortar\\MortarMissile.mdl"
+mt.BulletArc =0.35
+mt.EmitTimes = 999999
+mt.BulletMaxDistance = 800
+mt.InitialVeloc = 20
+mt.EmitInterval = 0.5
+mt.Cooldown = 0.5
+mt.Delay = 2
+mt.High = 80

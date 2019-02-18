@@ -29,6 +29,7 @@ function GameStart.AnyUnitSelected()
             Heros[id + 1] = unit
             SetUnitPositionLoc(unit, JumpPoints[id + 1][2][3])
             PanCameraToTimedLocForPlayer(GetTriggerPlayer(), JumpPoints[id + 1][2][3], 0)
+            Battle.PushWave()
             DestroyTrigger(GetTriggeringTrigger())
         end
         mLastSelectedTime = GameScene.Elapsed
@@ -41,6 +42,7 @@ end
 
 --任意单位死亡
 function GameStart.AnyUnitDeath(killUnit, dieUnit)
+    Battle.AnyUnitDeath(killUnit, dieUnit)
     AssetsManager.RemoveObject(dieUnit)
 end
 

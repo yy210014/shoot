@@ -2,7 +2,7 @@ AssetsManager = {}
 
 local mPlayerTeamUnits = {}
 local mEnemyTeamUnits = {}
-local mDefUnitFacing = 270
+local mDefUnitFacing = 180
 local mDyingUnits = {}
 
 
@@ -29,7 +29,7 @@ function GetJ_DyingUnits()
 end
 
 function AssetsManager.LoadUnit(player, id, x, y)
-    local entity = CreateUnit(player, Misc.GetId(id), x, y, mDefUnitFacing)
+    local entity = CreateUnit(player, id, x, y, mDefUnitFacing)
     local unit = Unit:New(entity)
     if (unit.FactionId == 0) then
         mPlayerTeamUnits[#mPlayerTeamUnits + 1] = unit
@@ -45,7 +45,7 @@ function AssetsManager.LoadUnit(player, id, x, y)
 end
 
 function AssetsManager.LoadUnitAtLoc(player, id, point)
-    local entity = CreateUnitAtLoc(player, Misc.GetId(id), point, mDefUnitFacing)
+    local entity = CreateUnitAtLoc(player, id, point, mDefUnitFacing)
     if (entity == nil) then
         Game.Log("LoadUnitAtLoc id: " .. id)
     end

@@ -1,5 +1,5 @@
 require "scripts.AssetsManager"
-require "scripts.MonsterRefresh"
+require "scripts.Battle"
 require "scripts.Combat.Unit"
 require "scripts.Combat.Attribute"
 require "scripts.Combat.Items.InitItem"
@@ -34,5 +34,4 @@ end
 function GameScene.OnGameUpdate(dt)
     GameScene.Elapsed = GameScene.Elapsed + dt
     AssetsManager.OnGameUpdate(dt)
-    MonsterRefresh.OnGameUpdate(dt)
 end
